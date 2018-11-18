@@ -3,80 +3,125 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 
 <body>
-    <button type="button" class="btn btn-primary btn-lg btn-block">Start Quiz</button>
-    <div class="container">
-        <div class="row">
-            <h1>What is the Arizona State Flower</h1>
-        </div>
-        <div class=row>
+    <div id="myModal" class="modal">
 
-            <div class="col-sm">1.Rose</div>
-            <div class="col-sm">2.Saguaro cactus blossom</div>
-            <div class="col-sm">3.Lilly</div>
-            <div class="col-sm">4.Golden Poppy</div>
-
+        <div class="modal-content">
+            <p>How well do you know the state of Arizona? You have 1 minute to test your knowledge!</p>
+            <button id="start" class="btn btn-primary">Start Quiz</button>
         </div>
+
     </div>
-    <div class="container">
-        <div class="row">
-            <h1>What is the state capital of Arizona?</h1>
-        </div>
-        <div class=row>
+    <div id="wrapper">
 
-            <div class="col-sm">1. Tucson</div>
-            <div class="col-sm">2. Flagstaff</div>
-            <div class="col-sm">3. Phoenix</div>
-            <div class="col-sm">4. Scottsdale</div>
+        <div id="display">00:00</div>
 
+        <div id="buttons">
+            <button id="submit">Submit</button>
+            <button id="reset">Reset</button>
         </div>
+
+
+
     </div>
-    <div class="container">
-        <div class="row">
-            <h1>In what year did Arizona become a state?</h1>
-        </div>
-        <div class=row>
+    <div id="quiz">
+        <!-- 
+        <div class="container">
+            <div class="row">
+                <h1>What is the Arizona State Flower</h1>
+            </div>
+            <div class=row>
+                <div class="col-sm">
+                    <p class="choice">a: Desert Rose</p>
+                </div>
+                <div class="col-sm">
+                    <p class="choice">b: Saguaro cactus blossom</p>
+                </div>
+                <div class="col-sm">
+                    <p class="choice">c: Lilly</p>
+                </div>
+                <div class="col-sm">
+                    <p class="choice">d: Golden Poppy</p>
+                </div>
 
-            <div class="col-sm">1. 1887</div>
-            <div class="col-sm">2. 1776</div>
-            <div class="col-sm">3. 1801</div>
-            <div class="col-sm">4. 1912</div>
-
+            </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <h1>What is the state capital of Arizona?</h1>
+            </div>
+            <div class=row>
+                <div class="col-sm">
+                    <p class="choice">a: Tucson</p>
+                </div>
+                <div class="col-sm">
+                    <p class="choice">b: Flagstaff</p>
+                </div>
+                <div class="col-sm">
+                    <p class="choice">c: Phoenix</p>
+                </div>
+                <div class="col-sm">
+                    <p class="choice">d: Scottsdale</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <h1>In what year did Arizona become a state?</h1>
+            </div>
+            <div class=row>
+
+                <div class="col-sm">
+                    <p class="choice">a: 1887</p>
+                </div>
+                <div class="col-sm">
+                    <p class="choice">b: 1776</p>
+                </div>
+                <div class="col-sm">
+                    <p class="choice">c: 1801</p>
+                </div>
+                <div class="col-sm">
+                    <p class="choice">d: 1912</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <h1>Which of the following states does not share a border with Arizona?</h1>
+            </div>
+            <div class=row>
+                <div class="col-sm">
+                    <p class="choice">a: Texas</p>
+                </div>
+                <div class="col-sm">
+                    <p class="choice">b: Utah</p>
+                </div>
+                <div class="col-sm">
+                    <p class="choice">c: New Mexico</p>
+                </div>
+                <div class="col-sm">
+                    <p class="choice">d: California</p>
+                </div>
+
+            </div>
+        </div> -->
     </div>
-    <div class="container">
-        <div class="row">
-            <h1>Which of the following states does not share a border with Arizona?</h1>
-        </div>
-        <div class=row>
 
-            <div class="col-sm">1. Texas</div>
-            <div class="col-sm">2. Utah</div>
-            <div class="col-sm">3. New Mexico</div>
-            <div class="col-sm">4. California</div>
+    <div id="results"></div>
 
-        </div>
-    </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-        <script type="text/javascript" src="assets/javascript/app.js">
-    //     // $().button('dispose') // //create a start button with an on click event" // Don't let the player pick
-    // more than one answer per question // // The player will have a limited amount of time to finish the quiz. // Don't forget
-    // to include a countdown timer// // The game ends when the time runs out. // The page will reveal the number of questions
-    // // that players answer correctly and incorrectly. //correct, incorrect, unanswered//
-
-    </script>
-
-
-
-    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
 </html>
