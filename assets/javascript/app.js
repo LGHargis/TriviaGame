@@ -2,11 +2,9 @@
 window.onload = function () {
     modal.style.display = "block";
     $("#submit").on("click", stopwatch.stop);
-    $("#reset").on("click", stopwatch.reset);
     $("#start").on("click", stopwatch.start);
 };
 var modal = document.getElementById('myModal');
-
 var span = document.getElementById("start");
 span.onclick = function () {
     modal.style.display = "none";
@@ -52,6 +50,16 @@ const myQuestions = [
             b: "Utah",
             c: "New Mexico",
             d: "California",
+        },
+        correctAnswer: "a",
+    },
+    {
+        question: "Arizona leads the nation in what?",
+        answers: {
+            a: "Copper production",
+            b: "Poverty",
+            c: "Higher education",
+            d: "honey production",
         },
         correctAnswer: "a",
     },
@@ -102,16 +110,11 @@ function showResults() {
 
 buildQuiz();
 submitButton.addEventListener('click', showResults);
-
-
-
+//Timer code//
 var intervalId;
 var clockRunning = false;
-
 var stopwatch = {
-
     time: 0,
-
 
     reset: function () {
         stopwatch.time = 0;
@@ -126,22 +129,18 @@ var stopwatch = {
     },
     stop: function () {
         //end of quiz nonsense
-        // DONE: Use clearInterval to stop the count here and set the clock to not be running.
         console.log(intervalId);
         clearInterval(intervalId);
         clockRunning = false;
     },
     count: function () {
-
-        // DONE: increment time by 1, remember we cant use "this" here.
         stopwatch.time++;
 
-
-        if (stopwatch.time > 3) {
+        if (stopwatch.time > 60) {
             stopwatch.stop();
             stopwatch.reset();
-            //alert("time is up");
-            //$("#display").text("00:00");
+            alert("time is up");
+            showResults();
         }
 
         else {
@@ -149,6 +148,7 @@ var stopwatch = {
             $("#display").text(converted);
         }
     },
+
     timeConverter: function (t) {
 
         var minutes = Math.floor(t / 60);
